@@ -17,9 +17,43 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "黑马优购",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-s.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "icons/more.png",
+        "selectedIconPath": "icons/more-s.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "icons/cat.png",
+        "selectedIconPath": "icons/cat-s.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-s.png"
+      }
+    ]
+  },
+
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
