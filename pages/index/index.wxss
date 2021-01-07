@@ -1,5 +1,4 @@
 .home-index .home-swiper swiper {
-  width: 750rpx;
   height: 340rpx;
 }
 .home-index .home-swiper swiper image {

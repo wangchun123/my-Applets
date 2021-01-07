@@ -5,7 +5,6 @@
             <swiper-item wx:for="{{swiperList}}" wx:key="{{goods_id}}">
                 <navigator>
                     <image src="{{item.img_src}}" mode="widthFix" />
-                    {{item.img_src}}
                 </navigator>
             </swiper-item>
         </swiper>
