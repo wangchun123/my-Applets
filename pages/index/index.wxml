@@ -9,4 +9,10 @@
             </swiper-item>
         </swiper>
     </view>
+    <view class="home-navigat">
+        <navigator wx:for="{{navigateList}}" wx:key="{{id}}">
+            <image src="{{item.img_url}}" mode="widthFix"></image>
+            <view>{{item.title}}</view>
+        </navigator>
+    </view>
 </view>

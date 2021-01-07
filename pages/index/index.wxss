@@ -4,3 +4,17 @@
 .home-index .home-swiper swiper image {
   width: 100%;
 }
+.home-index .home-navigat {
+  display: flex;
+}
+.home-index .home-navigat navigator {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home-index .home-navigat navigator image {
+  width: 100%;
+}
