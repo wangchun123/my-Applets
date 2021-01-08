@@ -13,8 +13,7 @@ Page({
 
   fetchSwiperData: function () {
     request({
-      url:
-        "https://www.fastmock.site/mock/afa8f2b5a50c33249b6143fcebcfd5e2/wx/api/swiperdata",
+      url: "/swiperdata",
     }).then((res) => {
       this.setData({
         swiperList: res.data.message || [],
@@ -23,8 +22,7 @@ Page({
   },
   fetchNavigateData: function () {
     request({
-      url:
-        "https://www.fastmock.site/mock/afa8f2b5a50c33249b6143fcebcfd5e2/wx/api/navigation",
+      url: "/navigation",
     }).then((res) => {
       this.setData({
         navigateList: res.data.list || [],
@@ -33,8 +31,7 @@ Page({
   },
   fetchFloorData: function () {
     request({
-      url:
-        "https://www.fastmock.site/mock/afa8f2b5a50c33249b6143fcebcfd5e2/wx/api/floor",
+      url: "/floor",
     }).then((res) => {
       this.setData({
         floorList: res.data.list || [],
