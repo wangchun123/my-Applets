@@ -2,11 +2,11 @@
     <SearchInput></SearchInput>
     <view class="content">
         <scroll-view scroll-y class="left-content">
-            <view wx:for="{{leftList}}" class="left-text {{selectIndex===index?'active':''}}">
+            <view wx:for="{{leftList}}" class="left-text {{selectIndex===index?'active':''}}" bind:tap="handelClick" data-index="{{index}}">
                 {{item}}
             </view>
         </scroll-view>
-        <scroll-view scroll-y class="right-content">
+        <scroll-view scroll-y class="right-content" scroll-top="{{topZory}}">
             <view class="item-group" wx:for="{{rightList}}" wx:for-index="index1" wx:for-item="item1" wx:key="{{id}}">
                 <view class="title">{{item1.name}}</view>
                 <navigator wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2" wx:key="{{id}}">
