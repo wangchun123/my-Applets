@@ -1,1 +1,47 @@
-/* pages/category/index.wxss */
+page {
+  height: 100vh;
+}
+.categy {
+  height: 100vh;
+}
+.categy .content {
+  display: flex;
+  height: calc(100vh - 90rpx);
+}
+.categy .content .left-content {
+  flex: 2;
+}
+.categy .content .left-content .left-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.categy .content .right-content {
+  flex: 5;
+}
+.categy .content .right-content .item-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.categy .content .right-content .item-group .title {
+  width: 100%;
+  padding: 10rpx 0;
+  font-weight: bold;
+}
+.categy .content .right-content .item-group navigator {
+  width: 33.33%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.categy .content .right-content .item-group navigator image {
+  width: 60%;
+}
+.categy .content .right-content .item-group navigator .intriduce {
+  width: 100%;
+}
