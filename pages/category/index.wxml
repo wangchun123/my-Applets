@@ -2,7 +2,9 @@
     <SearchInput></SearchInput>
     <view class="content">
         <scroll-view scroll-y class="left-content">
-            <view wx:for="{{leftList}}" class="left-text">{{item}}</view>
+            <view wx:for="{{leftList}}" class="left-text {{selectIndex===index?'active':''}}">
+                {{item}}
+            </view>
         </scroll-view>
         <scroll-view scroll-y class="right-content">
             <view class="item-group" wx:for="{{rightList}}" wx:for-index="index1" wx:for-item="item1" wx:key="{{id}}">

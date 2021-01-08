@@ -4,6 +4,7 @@ Page({
   data: {
     leftList: [],
     rightList: [],
+    selectIndex: 0,
   },
   categyList: [],
   onLoad: function () {

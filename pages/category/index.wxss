@@ -17,6 +17,9 @@ page {
   align-items: center;
   padding: 10rpx 0;
 }
+.categy .content .left-content .active {
+  color: var(--themeColor);
+}
 .categy .content .right-content {
   flex: 5;
 }
