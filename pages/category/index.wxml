@@ -9,7 +9,7 @@
         <scroll-view scroll-y class="right-content" scroll-top="{{topZory}}">
             <view class="item-group" wx:for="{{rightList}}" wx:for-index="index1" wx:for-item="item1" wx:key="{{id}}">
                 <view class="title">{{item1.name}}</view>
-                <navigator wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2" wx:key="{{id}}">
+                <navigator wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2" wx:key="{{id}}" url="/pages/goods_list/index?id={{item2.id}}">
                     <image src="{{item2.img_src}}" mode="widthFix"></image>
                     <view class="intriduce">{{item2.name}}</view>
                 </navigator>
