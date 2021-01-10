@@ -4,7 +4,7 @@
 }
 .goods_detail swiper {
   height: 450rpx;
-  width: 100vw;
+  width: 100%;
 }
 .goods_detail swiper swiper-item navigator {
   display: flex;
