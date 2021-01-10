@@ -2,17 +2,17 @@
     <SearchInput></SearchInput>
     <Tabs data="{{tabsList}}" bind:tabsItemClick="TabsItemClick">
         <block wx:if="{{tabsList[0].isActive}}">
-            <view class="goods-wap" wx:for="{{goodsList}}" wx:key="{{id}}">
-                <view class="goods-left-img">
-                    <navigator>
+            <navigator url="/pages/goods_detail/index">
+                <view class="goods-wap" wx:for="{{goodsList}}" wx:key="{{id}}">
+                    <view class="goods-left-img">
                         <image mode="widthFix" src="{{item.img_src}}"></image>
-                    </navigator>
+                    </view>
+                    <view class="goods-right-content">
+                        <view class="introduce">{{item.name}}</view>
+                        <view class="price">￥{{item.price}}</view>
+                    </view>
                 </view>
-                <view class="goods-right-content">
-                    <view class="introduce">{{item.name}}</view>
-                    <view class="price">￥{{item.price}}</view>
-                </view>
-            </view>
+            </navigator>
         </block>
         <block wx:elif="{{tabsList[1].isActive}}">1</block>
         <block wx:elif="{{tabsList[2].isActive}}">2</block>

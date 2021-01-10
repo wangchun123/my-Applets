@@ -5,7 +5,7 @@
 .good_list .goods-wap .goods-left-img {
   flex: 2;
 }
-.good_list .goods-wap .goods-left-img navigator image {
+.good_list .goods-wap .goods-left-img image {
   width: 70%;
 }
 .good_list .goods-wap .goods-right-content {

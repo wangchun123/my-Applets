@@ -10,4 +10,5 @@
 }
 .tabs .tabs-title .active {
   border-bottom: 3rpx solid var(--themeColor);
+  color: var(--themeColor);
 }
