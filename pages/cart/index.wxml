@@ -15,7 +15,7 @@
         <view class="title">购物车</view>
         <view class="goods-item" wx:for="{{cartData}}" wx:key="{{id}}">
             <view class="checkb">
-                <checkbox-group bindchange="">
+                <checkbox-group bindchange="handelCheck" data-index="{{index}}">
                     <checkbox checked="{{item.checked}}"></checkbox>
                 </checkbox-group>
             </view>
@@ -36,16 +36,16 @@
         </view>
     </view>
     <view class="bottom-setment">
-        <checkbox-group bindchange="">
-            <checkbox>全选</checkbox>
+        <checkbox-group bindchange="handelAllCheck">
+            <checkbox checked="{{allChecked}}">全选</checkbox>
         </checkbox-group>
         <view class="price-all">
             <view>
                 合计:
-                <text class="num-all">￥999</text>
+                <text class="num-all">￥{{totalPrice}}</text>
             </view>
             <view>包含运费</view>
         </view>
-        <view class="result">结算(0)</view>
+        <view class="result">结算({{totalNum}})</view>
     </view>
 </view>
