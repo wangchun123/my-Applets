@@ -1,1 +1,131 @@
-/* pages/cart/index.wxss */
+.goods_cart .goods_adress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+}
+.goods_cart .info {
+  font-weight: bold;
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid var(--themeColor);
+}
+.goods_cart .info .left {
+  flex: 5;
+}
+.goods_cart .info .right {
+  flex: 2;
+  text-align: right;
+}
+.goods_cart .goods-calcu .title {
+  color: var(--themeColor);
+  padding: 20rpx;
+  border-bottom: 1rpx solid var(--themeColor);
+}
+.goods_cart .goods-calcu .goods-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.goods_cart .goods-calcu .goods-item .checkb {
+  flex: 1;
+  height: 100%;
+}
+.goods_cart .goods-calcu .goods-item .warp-img {
+  flex: 2;
+}
+.goods_cart .goods-calcu .goods-item .warp-img image {
+  width: 100%;
+}
+.goods_cart .goods-calcu .goods-item .right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goods_cart .goods-calcu .goods-item .right .introduce {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goods_cart .goods-calcu .goods-item .right .bottom {
+  margin-top: 50rpx;
+  display: flex;
+}
+.goods_cart .goods-calcu .goods-item .right .bottom .price {
+  flex: 5;
+  color: var(--themeColor);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.goods_cart .goods-calcu .goods-item .right .bottom .warp {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+.goods_cart .goods-calcu .goods-item .right .bottom .warp .reduce {
+  height: 50rpx;
+  width: 50rpx;
+  border: 1rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+}
+.goods_cart .goods-calcu .goods-item .right .bottom .warp .num {
+  flex: 5;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goods_cart .goods-calcu .goods-item .right .bottom .warp .add {
+  height: 50rpx;
+  width: 50rpx;
+  border: 1rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+}
+.goods_cart .bottom-setment {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border-top: 1rpx solid #ccc;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  padding-left: 10rpx;
+}
+.goods_cart .bottom-setment checkbox-group {
+  flex: 5;
+}
+.goods_cart .bottom-setment .price-all {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.goods_cart .bottom-setment .price-all text {
+  color: var(--themeColor);
+  font-weight: bold;
+}
+.goods_cart .bottom-setment .result {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+  height: 100%;
+  color: #fff;
+  font-weight: bold;
+}

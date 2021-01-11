@@ -37,7 +37,7 @@
                 <view>购物车</view>
             </navigator>
         </view>
-        <view class="btn1">加入购物车</view>
+        <view class="btn1" bind:tap="handelCartAdd">加入购物车</view>
         <view class="btn2">立即购买</view>
     </view>
 </view>
