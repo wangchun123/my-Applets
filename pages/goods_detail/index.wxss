@@ -4,14 +4,13 @@
 }
 .goods_detail swiper {
   height: 450rpx;
-  width: 100%;
 }
-.goods_detail swiper swiper-item navigator {
+.goods_detail swiper navigator {
   display: flex;
   justify-content: center;
   height: 100%;
 }
-.goods_detail swiper swiper-item navigator image {
+.goods_detail swiper navigator image {
   width: 50%;
 }
 .goods_detail .content .price {
@@ -72,6 +71,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   opacity: 0;
 }
 .goods_detail .botm-tool .btn1 {
