@@ -3,6 +3,7 @@ import {
   getSetting,
   openSetting,
   showModal,
+  showToast,
 } from "../../utils/wx-api";
 Page({
   data: {
@@ -89,14 +90,30 @@ Page({
       if (newData[index].num > 1) {
         newData[index].num--;
       } else {
-        showModal({ title: "提示", content: "你是否要删除该商品？" }).then(() => {
-          newData.splice(index, 1);
-          this.calcPriceNum(newData);
-        });
+        showModal({ title: "提示", content: "你是否要删除该商品？" }).then(
+          () => {
+            newData.splice(index, 1);
+            this.calcPriceNum(newData);
+          }
+        );
       }
     } else {
       newData[index].num++;
     }
     this.calcPriceNum(newData);
+  },
+  handelAccout: function () {
+    const { totalNum, addressObj } = this.data;
+    if (!addressObj.userName) {
+      showToast({ title: "你还没添加收货地址" });
+      return;
+    }
+    if (totalNum === 0) {
+      showToast({ title: "你还没选购商品" });
+      return;
+    }
+    wx.navigateTo({
+      url: "/pages/pay/index",
+    });
   },
 });

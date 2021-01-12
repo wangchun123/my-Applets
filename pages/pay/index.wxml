@@ -1,2 +1,40 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view class="goods_cart">
+    <view>
+        <view class="info">
+            <view class="left">
+                <view>{{addressObj.userName}}</view>
+                <view>{{addressObj.all}}</view>
+            </view>
+            <view class="right">{{addressObj.telNumber}}</view>
+        </view>
+    </view>
+    <view class="goods-calcu">
+        <view class="title">购物车</view>
+        <view>
+            <view class="goods-item" wx:for="{{cartData}}" wx:key="{{id}}">
+                <view class="warp-img">
+                    <image mode="widthFix" src="{{item.pic[0].img_src}}"></image>
+                </view>
+                <view class="right">
+                    <view class="introduce">{{item.name}}</view>
+                    <view class="bottom">
+                        <view class="price">￥{{item.price}}</view>
+                        <view class="warp">
+                            <view class="num">X {{item.num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-setment">
+        <view class="price-all">
+            <view class="total-price">
+                <view>合计:</view>
+                <view class="num-all">￥{{totalPrice}}</view>
+            </view>
+            <view>包含运费</view>
+        </view>
+        <view class="result" bind:tap="handelOrderPay">支付({{totalNum}})</view>
+    </view>
+</view>

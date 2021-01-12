@@ -56,6 +56,6 @@
             </view>
             <view>包含运费</view>
         </view>
-        <view class="result">结算({{totalNum}})</view>
+        <view class="result" bind:tap="handelAccout">结算({{totalNum}})</view>
     </view>
 </view>

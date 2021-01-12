@@ -1,66 +1,51 @@
-// pages/pay/index.js
+import { request } from "../../request/index.js";
+import { requestPayment, showToast } from "../../utils/wx-api";
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    addressObj: {},
+    cartData: [],
+    totalNum: 0,
+    totalPrice: 0,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
+    const addressObj = wx.getStorageSync("adress");
+    let cartData = wx.getStorageSync("cart") || [];
+    cartData.filter((item) => item.checked);
 
+    let totalNum = 0;
+    let totalPrice = 0;
+
+    cartData.forEach((item) => {
+      totalPrice += item.num * item.price;
+      totalNum += item.num;
+    });
+
+    this.setData({
+      addressObj,
+      cartData,
+      totalNum,
+      totalPrice,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handelOrderPay: function () {
+    const token = wx.getStorageSync("token");
+    if (!token) {
+      wx.navigateTo({
+        url: "/pages/auth/index",
+      });
+    } else {
+      request({ url: "/orders/create", method: "post" }).then((res) => {
+        const { order_num } = res.data;
+        showToast({ title: "支付功能暂未开通" });
+        requestPayment({
+          timeStamp: "1",
+          nonceStr: "2",
+          package: "3",
+          signType: "4",
+          paySign: "5",
+        });
+      });
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

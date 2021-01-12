@@ -58,3 +58,47 @@ export const showModal = ({ title = "", content = "" }) => {
     });
   });
 };
+
+/**
+ * 轻提示
+ */
+export const showToast = ({ title = "" }) => {
+  return new Promise((resovle, reject) => {
+    wx.showToast({
+      title: title,
+      icon: "none",
+      mask: true,
+    });
+  });
+};
+
+/**
+ * 微信登录
+ */
+export const login = () => {
+  return new Promise((resovle, reject) => {
+    wx.login({
+      timeout: 10000,
+      success: (result) => {
+        resovle(result);
+      },
+    });
+  });
+};
+
+/**
+ * 微信支付
+ */
+export const requestPayment = (pay) => {
+  return new Promise((resovle, reject) => {
+    wx.requestPayment({
+      ...pay,
+      success: (result) => {
+        resovle(result);
+      },
+      fail: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
