@@ -36,3 +36,25 @@ export const openSetting = () => {
     });
   });
 };
+
+/**
+ * 打开弹框
+ */
+export const showModal = ({ title = "", content = "" }) => {
+  return new Promise((resovle, reject) => {
+    wx.showModal({
+      title: title,
+      content: content,
+      showCancel: true,
+      cancelText: "取消",
+      cancelColor: "#000000",
+      confirmText: "确定",
+      confirmColor: "#3CC51F",
+      success: (result) => {
+        if (result.confirm) {
+          resovle(result);
+        }
+      },
+    });
+  });
+};

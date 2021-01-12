@@ -1,4 +1,9 @@
-import { chooseAddress, getSetting, openSetting } from "../../utils/wx-api";
+import {
+  chooseAddress,
+  getSetting,
+  openSetting,
+  showModal,
+} from "../../utils/wx-api";
 Page({
   data: {
     addressObj: {},
@@ -75,5 +80,23 @@ Page({
     allChecked = !allChecked;
     cartData.forEach((item) => (item.checked = allChecked));
     this.calcPriceNum(cartData);
+  },
+  handelNum: function (e) {
+    const { status, index } = e.target.dataset;
+    const newData = JSON.parse(JSON.stringify(this.data.cartData));
+
+    if (status == -1) {
+      if (newData[index].num > 1) {
+        newData[index].num--;
+      } else {
+        showModal({ title: "提示", content: "你是否要删除该商品？" }).then(() => {
+          newData.splice(index, 1);
+          this.calcPriceNum(newData);
+        });
+      }
+    } else {
+      newData[index].num++;
+    }
+    this.calcPriceNum(newData);
   },
 });
