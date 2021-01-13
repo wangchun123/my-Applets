@@ -1,1 +1,119 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user .userInfo-warp {
+  position: relative;
+  min-height: 100vh;
+}
+.user .userInfo-warp .back-img {
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--themeColor);
+}
+.user .userInfo-warp .back-img image {
+  filter: blur(8rpx);
+}
+.user .userInfo-warp .back-img .small-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user .userInfo-warp .back-img .small-img image {
+  width: 100%;
+  filter: blur(0rpx);
+}
+.user .userInfo-warp .back-img .name {
+  position: absolute;
+  bottom: 80rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #ffffff;
+  font-weight: bold;
+}
+.user .userInfo-warp .back-img button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200rpx;
+}
+.user .userInfo-warp .content {
+  position: absolute;
+  left: 10rpx;
+  right: 10rpx;
+  top: 35vh;
+}
+.user .userInfo-warp .content .top-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10rpx 0;
+}
+.user .userInfo-warp .content .top-title .title-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user .userInfo-warp .content .top-title .title-item > view:nth-child(1) {
+  color: red;
+}
+.user .userInfo-warp .content .my-orders {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.user .userInfo-warp .content .my-orders .title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user .userInfo-warp .content .my-orders .detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.user .userInfo-warp .content .my-orders .detail .detail-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user .userInfo-warp .content .my-orders .detail .detail-item > view:nth-child(1) {
+  color: var(--themeColor);
+}
+.user .userInfo-warp .content .my-address {
+  background-color: #fff;
+  padding: 20rpx 10rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.user .userInfo-warp .content .tool {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.user .userInfo-warp .content .tool .tool-item {
+  padding: 20rpx 10rpx;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+.user .userInfo-warp .content .tool .tool-item > view:nth-child(2) {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+.user .userInfo-warp .content .share {
+  background-color: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 10rpx;
+}

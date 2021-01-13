@@ -1,1 +1,3 @@
-/* pages/login/index.wxss */
+.auth {
+  padding: 20rpx;
+}
