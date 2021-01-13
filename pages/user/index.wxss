@@ -81,12 +81,14 @@ page {
 }
 .user .userInfo-warp .content .my-orders .detail .detail-item {
   flex: 1;
+}
+.user .userInfo-warp .content .my-orders .detail .detail-item navigator {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.user .userInfo-warp .content .my-orders .detail .detail-item > view:nth-child(1) {
+.user .userInfo-warp .content .my-orders .detail .detail-item navigator > view:nth-child(1) {
   color: var(--themeColor);
 }
 .user .userInfo-warp .content .my-address {

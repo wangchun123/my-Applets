@@ -1,2 +1,18 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class="order">
+    <Tabs data="{{tabsList}}" bind:tabsItemClick="TabsItemClick">
+        <view class="order-warp" wx:for="{{orderList}}" wx:key="{{item.price}}">
+            <view class="warp-item">
+                <view>订单编号</view>
+                <view>{{item.order_num}}</view>
+            </view>
+            <view class="warp-item">
+                <view>订单价格</view>
+                <view>￥{{item.price}}</view>
+            </view>
+            <view class="warp-item">
+                <view>订单日期</view>
+                <view>{{item.time}}</view>
+            </view>
+        </view>
+    </Tabs>
+</view>

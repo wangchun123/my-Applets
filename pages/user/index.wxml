@@ -37,20 +37,28 @@
                 <view class="title">我的订单</view>
                 <view class="detail">
                     <view class="detail-item">
-                        <view class="iconfont icon-dingdan"></view>
-                        <view>全部订单</view>
+                        <navigator url="/pages/order/index?type=1">
+                            <view class="iconfont icon-dingdan"></view>
+                            <view>全部订单</view>
+                        </navigator>
                     </view>
                     <view class="detail-item">
-                        <view class="iconfont icon-daifukuan"></view>
-                        <view>代付款</view>
+                        <navigator url="/pages/order/index?type=2">
+                            <view class="iconfont icon-daifukuan"></view>
+                            <view>代付款</view>
+                        </navigator>
                     </view>
                     <view class="detail-item">
-                        <view class="iconfont icon-che"></view>
-                        <view>待收货</view>
+                        <navigator url="/pages/order/index?type=3">
+                            <view class="iconfont icon-che"></view>
+                            <view>待收货</view>
+                        </navigator>
                     </view>
                     <view class="detail-item">
-                        <view class="iconfont icon-tuikuan"></view>
-                        <view>退款/退货</view>
+                        <navigator url="/pages/order/index?type=4">
+                            <view class="iconfont icon-tuikuan"></view>
+                            <view>退款/退货</view>
+                        </navigator>
                     </view>
                 </view>
             </view>

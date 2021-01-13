@@ -1,66 +1,60 @@
-// pages/order/index.js
+import { request } from "../../request/index.js";
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    tabsList: [
+      {
+        id: 1,
+        title: "全部",
+        isActive: true,
+      },
+      {
+        id: 2,
+        title: "代付款",
+        isActive: false,
+      },
+      {
+        id: 3,
+        title: "代收货",
+        isActive: false,
+      },
+      {
+        id: 3,
+        title: "退款/退货",
+        isActive: false,
+      },
+    ],
+    orderList: [],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onShow: function (option) {
+    const pageParam = getCurrentPages().pop();
+    const { type } = pageParam.options;
+    this.changeTabsActive(type - 1);
+    this.fetchOrderList(type);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  TabsItemClick: function (e) {
+    const { index } = e.detail;
+    this.changeTabsActive(index);
+    this.fetchOrderList(index + 1);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  changeTabsActive: function (index) {
+    const newData = JSON.parse(JSON.stringify(this.data.tabsList));
+    newData.forEach((item, ix) =>
+      index === ix ? (item.isActive = true) : (item.isActive = false)
+    );
+    this.setData({
+      tabsList: newData,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  fetchOrderList: function (type) {
+    request({ url: "/order/search", data: { type }, method: "post" }).then(
+      (res) => {
+        const { list } = res.data;
+        this.setData({
+          orderList: list,
+        });
+      }
+    );
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

@@ -1,1 +1,17 @@
-/* pages/order/index.wxss */
+.order .order-warp {
+  padding: 20rpx;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+.order .order-warp .warp-item {
+  display: flex;
+  margin-top: 10rpx;
+}
+.order .order-warp .warp-item > view:nth-child(2) {
+  flex: 5;
+  text-align: right;
+}
+.order .order-warp .warp-item:nth-child(2) > view:nth-child(2) {
+  color: red;
+  font-weight: bold;
+}
