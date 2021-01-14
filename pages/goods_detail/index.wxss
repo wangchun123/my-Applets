@@ -40,6 +40,9 @@
   align-items: center;
   border-left: 1rpx solid #000;
 }
+.goods_detail .content .introduce .shoucang .icon-shoucang1 {
+  color: var(--themeColor);
+}
 .goods_detail .detail .title {
   color: var(--themeColor);
   font-weight: bold;

@@ -10,8 +10,8 @@
         <view class="price">￥{{detailList.price}}</view>
         <view class="introduce">
             <view class="title">{{detailList.name}}</view>
-            <view class="shoucang">
-                <view class="iconfont icon-shoucang"></view>
+            <view class="shoucang" bind:tap="handelCollect">
+                <view class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}} "></view>
                 <view>收藏</view>
             </view>
         </view>

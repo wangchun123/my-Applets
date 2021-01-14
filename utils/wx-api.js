@@ -62,11 +62,11 @@ export const showModal = ({ title = "", content = "" }) => {
 /**
  * 轻提示
  */
-export const showToast = ({ title = "" }) => {
+export const showToast = ({ title = "", icon = "none" }) => {
   return new Promise((resovle, reject) => {
     wx.showToast({
       title: title,
-      icon: "none",
+      icon: icon,
       mask: true,
     });
   });
