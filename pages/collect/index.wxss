@@ -14,7 +14,7 @@
   padding: 10rpx;
   margin-right: 20rpx;
   border: 1rpx solid #ccc;
-  background-color: #FFF;
+  background-color: #fff;
 }
 .collect .warp .tips > view:nth-child(1) {
   color: var(--themeColor);
@@ -22,8 +22,9 @@
 }
 .collect .warp .goods_warp {
   display: flex;
-  background-color: #FFF;
+  background-color: #fff;
   padding: 10rpx;
+  border-bottom: 1rpx solid #ccc;
 }
 .collect .warp .goods_warp .left {
   flex: 2;

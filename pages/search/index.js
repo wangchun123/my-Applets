@@ -1,66 +1,51 @@
-// pages/search/index.js
+import { request } from "../../request/index.js";
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    value: "",
+    isShowCancel: false,
+    searchList: [],
   },
+  timer: null,
+  onShow: function () {},
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  handelInputChange: function (e) {
+    const { value } = e.detail;
+    this.setData({
+      value,
+    });
 
+    if (!value.trim()) {
+      this.setData({
+        isShowCancel: false,
+        searchList: [],
+      });
+      return;
+    }
+
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.fetchSearchList(value);
+    }, 1000);
+
+    this.setData({
+      isShowCancel: true,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handelCancel: function () {
+    this.setData({
+      value: "",
+      searchList: [],
+      isShowCancel: false,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  fetchSearchList: function (value) {
+    if (!this.data.value) return;
+    request({ url: "/goods/search", data: { pagenum: 1 } }).then((res) => {
+      const { data } = res.data.list;
+      this.setData({
+        searchList: data,
+      });
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});
