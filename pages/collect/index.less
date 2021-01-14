@@ -1,0 +1,53 @@
+
+.collect {
+  .warp {
+    background-color: #edece8;
+    min-height: 100vh;
+    .tips {
+      display: flex;
+      border-top: 1rpx solid #ccc;
+      padding: 20rpx;
+      & > view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rpx;
+        margin-right: 20rpx;
+        border: 1rpx solid #ccc;
+        background-color: #FFF;
+      }
+      & > view:nth-child(1) {
+        color: var(--themeColor);
+        border: 1rpx solid var(--themeColor);
+      }
+    }
+    .goods_warp {
+      display: flex;
+      background-color: #FFF;
+      padding: 10rpx;
+      .left {
+        flex: 2;
+        image {
+          width: 100%;
+        }
+      }
+      .right {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        & > view:nth-child(1) {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        & > view:nth-child(2) {
+          color: var(--themeColor);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

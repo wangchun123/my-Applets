@@ -57,12 +57,14 @@ page {
 }
 .user .userInfo-warp .content .top-title .title-item {
   flex: 1;
+}
+.user .userInfo-warp .content .top-title .title-item navigator {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.user .userInfo-warp .content .top-title .title-item > view:nth-child(1) {
+.user .userInfo-warp .content .top-title .title-item navigator > view:nth-child(1) {
   color: red;
 }
 .user .userInfo-warp .content .my-orders {

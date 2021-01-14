@@ -2,13 +2,16 @@
 Page({
   data: {
     userInfo: {},
+    collectNum: 0,
   },
 
   onShow: function () {
     const userInfo = wx.getStorageSync("userInfo");
-    console.log('userInfo', userInfo)
+    const collect = wx.getStorageSync("collect") || [];
+
     this.setData({
       userInfo,
+      collectNum: collect.length,
     });
   },
 });

@@ -1,2 +1,20 @@
-<!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<view class="collect">
+    <Tabs data="{{tabsList}}" bind:tabsItemClick="TabsItemClick">
+        <view class="warp">
+            <view class="tips">
+                <view>全部</view>
+                <view>正在热卖</view>
+                <view>即将上线</view>
+            </view>
+            <navigator url="/pages/goods_detail/index" class="goods_warp" wx:for="{{collectGoods}}" wx:key="{{id}}">
+                <view class="left">
+                    <image mode='widthFix' src="{{item.pic[0].img_src}}"></image>
+                </view>
+                <view class="right">
+                    <view>{{item.name}}</view>
+                    <view>￥{{item.price}}</view>
+                </view>
+            </navigator>
+        </view>
+    </Tabs>
+</view>

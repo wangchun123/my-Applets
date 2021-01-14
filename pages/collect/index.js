@@ -1,66 +1,51 @@
-// pages/collect/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    tabsList: [
+      {
+        id: 1,
+        title: "商品收藏",
+        isActive: true,
+      },
+      {
+        id: 2,
+        title: "品牌收藏",
+        isActive: false,
+      },
+      {
+        id: 3,
+        title: "店铺收藏",
+        isActive: false,
+      },
+      {
+        id: 4,
+        title: "浏览足迹",
+        isActive: false,
+      },
+    ],
+    collectGoods: [],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
+    const pageType = getCurrentPages();
+    const { type } = pageType.pop().options;
+    this.changeTabsActive(type - 1);
 
+    const collectGoods = wx.getStorageSync("collect");
+    this.setData({
+      collectGoods,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  TabsItemClick: function (e) {
+    const { index } = e.detail;
+    this.changeTabsActive(index);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  changeTabsActive: function (index) {
+    const newData = JSON.parse(JSON.stringify(this.data.tabsList));
+    newData.forEach((item, ix) =>
+      index === ix ? (item.isActive = true) : (item.isActive = false)
+    );
+    this.setData({
+      tabsList: newData,
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});
