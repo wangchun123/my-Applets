@@ -32,7 +32,7 @@
             <button open-type="share"></button>
         </view>
         <view class="icon">
-            <navigator url="/pages/cart/index" open-type="switchTab">
+            <navigator url="/pages/cart/index" open-type="switchTab" hover-class="none">
                 <view class="iconfont icon-gouwuchezhengpin"></view>
                 <view>购物车</view>
             </navigator>

@@ -6,7 +6,7 @@
                 <view>正在热卖</view>
                 <view>即将上线</view>
             </view>
-            <navigator url="/pages/goods_detail/index" class="goods_warp" wx:for="{{collectGoods}}" wx:key="{{id}}">
+            <navigator url="/pages/goods_detail/index" class="goods_warp" wx:for="{{collectGoods}}" wx:key="{{id}}" hover-class="none">
                 <view class="left">
                     <image mode='widthFix' src="{{item.pic[0].img_src}}"></image>
                 </view>

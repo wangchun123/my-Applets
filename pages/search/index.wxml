@@ -4,7 +4,7 @@
         <button bind:tap="handelCancel" hidden="{{!isShowCancel}}">取消</button>
     </view>
     <view class="search-content">
-        <navigator url="/pages/goods_detail/index" class="content-item" wx:for="{{searchList}}" wx:key="{{item.id}}">
+        <navigator url="/pages/goods_detail/index" class="content-item" wx:for="{{searchList}}" wx:key="{{item.id}}" hover-class="none">
             {{item.name}}
         </navigator>
     </view>

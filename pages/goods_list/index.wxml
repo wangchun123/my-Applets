@@ -2,7 +2,7 @@
     <SearchInput></SearchInput>
     <Tabs data="{{tabsList}}" bind:tabsItemClick="TabsItemClick">
         <block wx:if="{{tabsList[0].isActive}}">
-            <navigator url="/pages/goods_detail/index">
+            <navigator url="/pages/goods_detail/index" hover-class="none">
                 <view class="goods-wap" wx:for="{{goodsList}}" wx:key="{{id}}">
                     <view class="goods-left-img">
                         <image mode="widthFix" src="{{item.img_src}}"></image>

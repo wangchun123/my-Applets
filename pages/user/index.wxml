@@ -10,32 +10,32 @@
             </block>
             <block wx:else>
                 <button type="primary" plain="{{true}}">
-                    <navigator url="/pages/login/index">登录</navigator>
+                    <navigator url="/pages/login/index" hover-class="none">登录</navigator>
                 </button>
             </block>
         </view>
         <view class="content">
             <view class="top-title">
                 <view class="title-item">
-                    <navigator url="/pages/collect/index?type=1">
+                    <navigator url="/pages/collect/index?type=1" hover-class="none">
                         <view>0</view>
                         <view>收藏的店铺</view>
                     </navigator>
                 </view>
                 <view class="title-item">
-                    <navigator url="/pages/collect/index?type=2">
+                    <navigator url="/pages/collect/index?type=2" hover-class="none">
                         <view>{{collectNum}}</view>
                         <view>收藏的商品</view>
                     </navigator>
                 </view>
                 <view class="title-item">
-                    <navigator url="/pages/collect/index?type=3">
+                    <navigator url="/pages/collect/index?type=3" hover-class="none">
                         <view>0</view>
                         <view>关注的商品</view>
                     </navigator>
                 </view>
                 <view class="title-item">
-                    <navigator url="/pages/collect/index?type=4">
+                    <navigator url="/pages/collect/index?type=4" hover-class="none">
                         <view>0</view>
                         <view>我的足迹</view>
                     </navigator>
@@ -45,25 +45,25 @@
                 <view class="title">我的订单</view>
                 <view class="detail">
                     <view class="detail-item">
-                        <navigator url="/pages/order/index?type=1">
+                        <navigator url="/pages/order/index?type=1" hover-class="none">
                             <view class="iconfont icon-dingdan"></view>
                             <view>全部订单</view>
                         </navigator>
                     </view>
                     <view class="detail-item">
-                        <navigator url="/pages/order/index?type=2">
+                        <navigator url="/pages/order/index?type=2" hover-class="none">
                             <view class="iconfont icon-daifukuan"></view>
                             <view>代付款</view>
                         </navigator>
                     </view>
                     <view class="detail-item">
-                        <navigator url="/pages/order/index?type=3">
+                        <navigator url="/pages/order/index?type=3" hover-class="none">
                             <view class="iconfont icon-che"></view>
                             <view>待收货</view>
                         </navigator>
                     </view>
                     <view class="detail-item">
-                        <navigator url="/pages/order/index?type=4">
+                        <navigator url="/pages/order/index?type=4" hover-class="none">
                             <view class="iconfont icon-tuikuan"></view>
                             <view>退款/退货</view>
                         </navigator>
