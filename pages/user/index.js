@@ -28,4 +28,12 @@ Page({
       });
     });
   },
+  handelCallPhone: function () {
+    wx.makePhoneCall({
+      phoneNumber: "15757142314",
+      success: (result) => {
+        console.log("result", result);
+      },
+    });
+  },
 });

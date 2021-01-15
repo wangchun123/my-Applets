@@ -72,7 +72,7 @@
             </view>
             <view class="my-address" bind:tap="handelAddAdress">收货地址管理</view>
             <view class="tool">
-                <view class="tool-item">
+                <view class="tool-item" bind:tap="handelCallPhone">
                     <view>联系客服</view>
                     <view>15757142314</view>
                 </view>
