@@ -1,4 +1,4 @@
-//Page Object
+import { chooseAddress, getSetting, openSetting } from "../../utils/wx-api";
 Page({
   data: {
     userInfo: {},
@@ -12,6 +12,20 @@ Page({
     this.setData({
       userInfo,
       collectNum: collect.length,
+    });
+  },
+  handelAddAdress: function () {
+    getSetting().then((res) => {
+      const addresScope = res.authSetting["scope.address"];
+      if (addresScope == false) {
+        openSetting();
+      }
+      chooseAddress().then((res) => {
+        wx.setStorageSync("adress", {
+          ...res,
+          all: `${res.provinceName}${res.cityName}${res.countyName}${res.detailInfo}`,
+        });
+      });
     });
   },
 });

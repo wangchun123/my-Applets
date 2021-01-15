@@ -108,6 +108,15 @@ page {
   padding: 20rpx 10rpx;
   display: flex;
   border-bottom: 1rpx solid #ccc;
+  position: relative;
+}
+.user .userInfo-warp .content .tool .tool-item button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
 }
 .user .userInfo-warp .content .tool .tool-item > view:nth-child(2) {
   flex: 2;
@@ -120,4 +129,13 @@ page {
   display: flex;
   align-items: center;
   padding: 20rpx 10rpx;
+  position: relative;
+}
+.user .userInfo-warp .content .share button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
 }

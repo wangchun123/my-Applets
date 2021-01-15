@@ -70,16 +70,22 @@
                     </view>
                 </view>
             </view>
-            <view class="my-address">收货地址管理</view>
+            <view class="my-address" bind:tap="handelAddAdress">收货地址管理</view>
             <view class="tool">
                 <view class="tool-item">
                     <view>联系客服</view>
-                    <view>400-618-400</view>
+                    <view>15757142314</view>
                 </view>
-                <view class="tool-item">意见反馈</view>
+                <view class="tool-item">
+                    意见反馈
+                    <button open-type="feedback"></button>
+                </view>
                 <view class="tool-item">关于我们</view>
             </view>
-            <view class="share">把应用推荐给其他人</view>
+            <view class="share">
+                把应用推荐给其他人
+                <button open-type="share"></button>
+            </view>
         </view>
     </view>
 </view>

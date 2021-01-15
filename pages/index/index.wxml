@@ -3,14 +3,14 @@
     <view class="home-swiper">
         <swiper autoplay indicator-dots circular>
             <swiper-item wx:for="{{swiperList}}" wx:key="{{goods_id}}">
-                <navigator>
+                <navigator url="/pages/goods_detail/index">
                     <image src="{{item.img_src}}" mode="widthFix" />
                 </navigator>
             </swiper-item>
         </swiper>
     </view>
     <view class="home-navigat">
-        <navigator wx:for="{{navigateList}}" wx:key="{{id}}">
+        <navigator wx:for="{{navigateList}}" wx:key="{{id}}" url="/pages/category/index" open-type="switchTab">
             <image src="{{item.img_url}}" mode="widthFix"></image>
             <view>{{item.title}}</view>
         </navigator>
@@ -19,7 +19,7 @@
         <view class="floor-group" wx:for="{{floorList}}" wx:for-index="index1" wx:for-item="item1" wx:key="{{id}}">
             <view class="floor-title">{{item1.title}}</view>
             <view class="foolr-content">
-                <navigator wx:for="{{item1.products}}" wx:for-index="index2" wx:for-item="item2" wx:key="img_src">
+                <navigator wx:for="{{item1.products}}" wx:for-index="index2" wx:for-item="item2" wx:key="img_src" url="/pages/goods_list/index">
                     <image mode="scaleToFill" src="{{item2.img_src}}"></image>
                 </navigator>
             </view>

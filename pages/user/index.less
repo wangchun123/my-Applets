@@ -106,6 +106,15 @@ page {
           padding: 20rpx 10rpx;
           display: flex;
           border-bottom: 1rpx solid #ccc;
+          position: relative;
+          button {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+          }
           & > view:nth-child(2) {
             flex: 2;
             display: flex;
@@ -119,6 +128,15 @@ page {
         display: flex;
         align-items: center;
         padding: 20rpx 10rpx;
+        position: relative;
+        button {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          width: 100%;
+        }
       }
     }
   }
