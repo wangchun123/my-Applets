@@ -7,11 +7,15 @@ Page({
   },
   bigImage: {},
   onLoad: function (options) {
-    this.fetchDetailData();
+    const { type } = options;
+    console.log("options", options);
+    this.fetchDetailData(type);
   },
-  fetchDetailData: function () {
+  fetchDetailData: function (type) {
     request({
       url: "/goods/detail",
+      data: { type: type },
+      method: "post",
     }).then((res) => {
       const { list } = res.data;
       this.bigImage = list;
