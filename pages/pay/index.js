@@ -11,7 +11,7 @@ Page({
   onShow: function () {
     const addressObj = wx.getStorageSync("adress");
     let cartData = wx.getStorageSync("cart") || [];
-    cartData.filter((item) => item.checked);
+    cartData = cartData.filter((item) => item.checked);
 
     let totalNum = 0;
     let totalPrice = 0;
